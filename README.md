@@ -163,7 +163,7 @@ Schedule a job to start at 8am 2015-12-25 UTC
 time = Timex.Date.from({{2015, 12, 25}, {8, 0, 0}}) |> Timex.Date.to_timestamp
 {:ok, ack} = Exq.enqueue_at(Exq, "default", time, MyWorker, ["arg1", "arg2"])
 ```
-
+ 
 ### Dynamic queue subscriptions:
 
 The list of queues that are being monitored by Exq is determined by the config.exs file or the parameters passed to Exq.start.  However, we can also dynamically add and remove queue subscriptions after exq has started.
